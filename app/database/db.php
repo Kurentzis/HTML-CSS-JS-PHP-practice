@@ -81,12 +81,11 @@ function selectOne($table, $params = []){
 }
 
 $params = [
-  'admin' => 1,
   'username' => 'Oleg'  
 ];
+//test(selectOne('blog.users', $params));
 
-//test(selectAll('blog.users', $params));
-test(selectOne('blog.users'));
+
 
 
 function insert($table, $params){
@@ -114,6 +113,7 @@ function insert($table, $params){
     $query->execute($params);
 
     dbCheckError($query);
+    return $pdo->lastInsertId();
 }
 
 function update($table, $id, $params){
@@ -161,5 +161,4 @@ function delete($table, $id){
     dbCheckError($query);
 }
 
-delete('blog.users', 2);
 ?>

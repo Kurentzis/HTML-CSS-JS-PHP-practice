@@ -11,10 +11,22 @@ h2 {
 
 html {
   background-color: #f6f6f6;
+  color: #242424;
 }
 html body {
   background-color: #242424;
   color: #fff;
+}
+html body .error {
+  text-align: center;
+  margin-top: 10px;
+}
+html body .error p {
+  color: orangered;
+  font-size: 25px;
+}
+html body .error p strong {
+  color: inherit;
 }
 
 header {
@@ -167,6 +179,7 @@ header .nav_menu__menu .nav_menu__admin_item:hover .nav_menu__sub_menu .nav_menu
   opacity: 1;
 }
 .logIn input[type=text],
+.logIn input[type=email],
 .logIn input[type=password] {
   background: #fff;
   border: none;
@@ -260,12 +273,12 @@ footer .footer_container .contact_form {
 footer .footer_container .contact_form h3 {
   color: #f6f6f6;
 }
-footer .footer_container .contact_form .message_form {
+footer .footer_container .contact_form form {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
 }
-footer .footer_container .contact_form .message_form input, footer .footer_container .contact_form .message_form textarea {
+footer .footer_container .contact_form form input, footer .footer_container .contact_form form textarea {
   border-radius: 10px;
   padding: 5px;
   background-color: #242424;

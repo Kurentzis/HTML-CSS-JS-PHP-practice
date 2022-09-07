@@ -1,4 +1,8 @@
-<?php include("path.php")?>
+<?php include("path.php");
+      //include("app/database/db.php");
+      include("app/controllers/users.php");
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -15,22 +19,25 @@
 
 <body>
 <?php include("app/include/header.php"); ?>
+<div class='error'>
+  <p><?=$errMessage?></p>
+</div>
 
-    <form class="logIn" method="post" action="regestration.html">
+    <form class="logIn" method="post" action="regestration.php">
         <input checked="" id="signin" name="action" type="radio" value="signin">
         <label for="signin">Войти</label>
-        <input id="signup" name="action" type="radio" value="signup">
+        <input  id="signup" name="action" type="radio" value="signup">
         <label for="signup">Регистрация</label>
         <input id="reset" name="action" type="radio" value="reset">
         <label for="reset">Сброс пароля</label>
         <div id="wrapper">
           <div id="arrow"></div>
-          <input id="email" placeholder="Email" type="text">
-          <input id="username" placeholder="Имя пользователя" type="text">
-          <input id="pass" placeholder="Пароль" type="password">
-          <input id="repass" placeholder="Повторите пароль" type="password">
+          <input id="email" placeholder="Email" type="email" name="email" value="<?=$email?>">
+          <input id="username" placeholder="Имя пользователя" type="text" name="username" value="<?=$login?>">
+          <input id="pass" placeholder="Пароль" type="password" name="pass">
+          <input id="repass" placeholder="Повторите пароль" type="password" name=repass>
         </div>
-        <button type="submit">
+        <button type="submit" class="btn_submit" name="btn_reg">
           <span>
             Сбросить пароль
             <br>
@@ -43,6 +50,7 @@
       <div id="hint">Click on the tabs</div>
 
       <?php include("app/include/footer.php")?>
+
 
 </body>
 
